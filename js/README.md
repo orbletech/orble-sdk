@@ -64,7 +64,7 @@ Idle boxes suspend by themselves, and `exec`, `read` and `write` wake a suspende
 
 ```ts
 await box.exec("nohup python3 -m http.server 3000 > /dev/null 2>&1 &");
-const url = await box.port(3000);                     // https://3000-<id>.orble.tech, for your account only
+const url = await box.port(3000);                     // its https address, for your account only
 const open = await box.port(3000, { public: true });  // for anyone with the address
 ```
 

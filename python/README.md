@@ -64,7 +64,7 @@ Idle boxes suspend by themselves, and `exec`, `read` and `write` wake a suspende
 
 ```python
 box.exec("nohup python3 -m http.server 3000 > /dev/null 2>&1 &")
-url = box.port(3000)                  # https://3000-<id>.orble.tech, for your account only
+url = box.port(3000)                  # its https address, for your account only
 url = box.port(3000, public=True)     # for anyone with the address
 ```
 
