@@ -1,5 +1,5 @@
 [project]
-name = "orble"
+name = "orble-sdk"
 version = "0.1.0"
 description = "Orble: Linux boxes for agents"
 readme = "README.md"

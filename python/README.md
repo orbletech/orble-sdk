@@ -3,7 +3,7 @@
 Make Linux boxes for agents, run commands in them, fork them and save them, from Python.
 
 ```bash
-pip install orble
+pip install orble-sdk
 ```
 
 ```python
