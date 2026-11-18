@@ -23,6 +23,7 @@ r.code, r.stdout, r.stderr
 
 Commands run with `/bin/sh -c` as the user `agent` (passwordless sudo), from `/home/agent`. `exec` waits for the
 command to finish, up to `timeout` seconds (at most 600). Each stream comes back as its last 64 KiB.
+`then="delete"` deletes the box when the command exits.
 
 ## Files
 
@@ -85,8 +86,8 @@ it, the SDK uses the sign-in of the [orble CLI](https://orble.tech/docs?tab=cli)
 
 ## More
 
-- [Docs](https://orble.tech/docs?tab=sdk)
-- [Source](https://github.com/lxe/orble-sdk)
+- [Docs](https://orble.tech/docs?tab=python)
+- [Source](https://github.com/orbletech/orble-sdk)
 - [TypeScript](https://www.npmjs.com/package/@orble/sdk): `npm install @orble/sdk`
 
 ## License

@@ -13,4 +13,4 @@ print(box.exec("echo hello").stdout)
 box.delete()
 ```
 
-[Docs](https://orble.tech/docs?tab=sdk) · MIT
+Docs: [Python](https://orble.tech/docs?tab=python) · [TypeScript](https://orble.tech/docs?tab=typescript) · MIT

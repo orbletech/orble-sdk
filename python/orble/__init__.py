@@ -8,7 +8,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __all__ = ["Box", "Error", "Result", "Snapshot", "boxes", "create", "snapshots"]
 
 
@@ -101,8 +101,9 @@ class Box:
     def _call(self, method, sub="", body=None, **kw):
         return self._c.call(method, f"/v1/boxes/{_q(self.name)}{sub}", body, **kw)
 
-    def exec(self, command, timeout=None, env=None, cwd=None):
-        """Run a shell command as the user agent, from /home/agent unless cwd says otherwise, and wait for it."""
+    def exec(self, command, timeout=None, env=None, cwd=None, then=None):
+        """Run a shell command as the user agent, from /home/agent unless cwd says otherwise, and wait for it.
+        then="delete" deletes the box when the command exits."""
         body = {"command": command}
         if timeout:
             body["timeout_s"] = int(timeout)
@@ -110,6 +111,8 @@ class Box:
             body["env"] = env
         if cwd:
             body["cwd"] = cwd
+        if then:
+            body["then"] = then
         r = self._call("POST", "/exec", body)
         while r.get("running"):  # a command still running after 50 s: wait for it again
             r = self._call("POST", "/exec", {"job": r["job"]})

@@ -1,6 +1,6 @@
 // Orble: Linux boxes for agents, from TypeScript. https://orble.tech/docs
 
-export const version = "0.1.1";
+export const version = "0.1.2";
 
 /** A request Orble refused or couldn't answer: status is the HTTP status (0 when no answer came). */
 export class OrbleError extends Error {
@@ -22,6 +22,7 @@ export interface ExecOptions {
   timeout?: number; // seconds; at most 600
   env?: Record<string, string>;
   cwd?: string;
+  then?: "delete"; // delete the box when the command exits
 }
 
 export interface CreateOptions {
@@ -125,6 +126,7 @@ export class Box {
     if (opts.timeout) body.timeout_s = Math.round(opts.timeout);
     if (opts.env) body.env = opts.env;
     if (opts.cwd) body.cwd = opts.cwd;
+    if (opts.then) body.then = opts.then;
     let r = await this.call("POST", "/exec", body);
     while (r.running) r = await this.call("POST", "/exec", { job: r.job }); // still running after 50 s
     return { code: r.exit_code, stdout: r.stdout ?? "", stderr: r.stderr ?? "", timedOut: !!r.timed_out };

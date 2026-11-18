@@ -23,6 +23,7 @@ const { code, stdout, stderr } = await box.exec("npm test", { cwd: "app", env: {
 
 Commands run with `/bin/sh -c` as the user `agent` (passwordless sudo), from `/home/agent`. `exec` waits for the
 command to finish, up to `timeout` seconds (at most 600). Each stream comes back as its last 64 KiB.
+`then: "delete"` deletes the box when the command exits.
 
 ## Files
 
@@ -85,8 +86,8 @@ it, the SDK uses the sign-in of the [orble CLI](https://orble.tech/docs?tab=cli)
 
 ## More
 
-- [Docs](https://orble.tech/docs?tab=sdk)
-- [Source](https://github.com/lxe/orble-sdk)
+- [Docs](https://orble.tech/docs?tab=typescript)
+- [Source](https://github.com/orbletech/orble-sdk)
 - [Python](https://pypi.org/project/orble-sdk/): `pip install orble-sdk`
 
 ## License

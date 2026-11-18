@@ -50,6 +50,12 @@ test("exec waits for a long command", async () => {
   assert.deepEqual(json(1), { job: "j1" });
 });
 
+test("exec then delete", async () => {
+  routes["POST /v1/boxes/k7f2/exec"] = [[200, { exit_code: 0, stdout: "", stderr: "" }]];
+  await orble.box("k7f2").exec("make", { then: "delete" });
+  assert.deepEqual(json(0), { command: "make", then: "delete" });
+});
+
 test("readBytes joins parts and decodes them", async () => {
   routes["GET /v1/boxes/k7f2/files"] = [
     [200, { size: 6, offset: 0, bytes: 3, encoding: "base64", content: Buffer.from([0, 1, 2]).toString("base64") }],

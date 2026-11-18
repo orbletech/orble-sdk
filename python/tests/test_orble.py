@@ -65,6 +65,11 @@ class SDK(unittest.TestCase):
         self.assertEqual(json.loads(Fake.seen[0][2]), {"command": "make", "timeout_s": 90, "env": {"CI": "1"}, "cwd": "app"})
         self.assertEqual(json.loads(Fake.seen[1][2]), {"job": "j1"})
 
+    def test_exec_then_delete(self):
+        Fake.routes["POST /v1/boxes/k7f2/exec"] = [(200, {"exit_code": 0, "stdout": "", "stderr": ""})]
+        orble.Box("k7f2", self.c).exec("make", then="delete")
+        self.assertEqual(json.loads(Fake.seen[0][2]), {"command": "make", "then": "delete"})
+
     def test_read_joins_parts_and_decodes(self):
         Fake.routes["GET /v1/boxes/k7f2/files"] = [
             (200, {"size": 6, "offset": 0, "bytes": 3, "encoding": "base64", "content": base64.b64encode(b"\x00\x01\x02").decode()}),
