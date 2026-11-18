@@ -85,7 +85,8 @@ it, the SDK uses the sign-in of the [orble CLI](https://orble.tech/docs?tab=cli)
 
 ## More
 
-- [Docs](https://orble.tech/docs)
+- [Docs](https://orble.tech/docs?tab=sdk)
+- [Source](https://github.com/lxe/orble-sdk)
 - [TypeScript](https://www.npmjs.com/package/@orble/sdk): `npm install @orble/sdk`
 
 ## License

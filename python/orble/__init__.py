@@ -8,7 +8,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = ["Box", "Error", "Result", "Snapshot", "boxes", "create", "snapshots"]
 
 

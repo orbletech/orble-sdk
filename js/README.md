@@ -85,7 +85,8 @@ it, the SDK uses the sign-in of the [orble CLI](https://orble.tech/docs?tab=cli)
 
 ## More
 
-- [Docs](https://orble.tech/docs)
+- [Docs](https://orble.tech/docs?tab=sdk)
+- [Source](https://github.com/lxe/orble-sdk)
 - [Python](https://pypi.org/project/orble-sdk/): `pip install orble-sdk`
 
 ## License

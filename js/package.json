@@ -1,9 +1,9 @@
 {
   "name": "@orble/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Orble: Linux boxes for agents",
   "license": "MIT",
-  "homepage": "https://orble.tech/docs",
+  "homepage": "https://orble.tech/docs?tab=sdk",
   "type": "module",
   "exports": {
     ".": {
@@ -27,5 +27,11 @@
   "devDependencies": {
     "typescript": "^5.6.0",
     "@types/node": "^20.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxe/orble-sdk.git",
+    "directory": "js"
+  },
+  "bugs": "https://github.com/lxe/orble-sdk/issues"
 }

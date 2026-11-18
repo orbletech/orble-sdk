@@ -1,6 +1,6 @@
 [project]
 name = "orble-sdk"
-version = "0.1.0"
+version = "0.1.1"
 description = "Orble: Linux boxes for agents"
 readme = "README.md"
 license = "MIT"
@@ -9,7 +9,8 @@ dependencies = []
 
 [project.urls]
 Homepage = "https://orble.tech"
-Documentation = "https://orble.tech/docs"
+Documentation = "https://orble.tech/docs?tab=sdk"
+Repository = "https://github.com/lxe/orble-sdk"
 
 [build-system]
 requires = ["setuptools>=77"]
