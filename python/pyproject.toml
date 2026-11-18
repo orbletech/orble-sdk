@@ -1,0 +1,19 @@
+[project]
+name = "orble"
+version = "0.1.0"
+description = "Orble: Linux boxes for agents"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.urls]
+Homepage = "https://orble.tech"
+Documentation = "https://orble.tech/docs"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["orble"]

@@ -1,0 +1,31 @@
+{
+  "name": "@orble/sdk",
+  "version": "0.1.0",
+  "description": "Orble: Linux boxes for agents",
+  "license": "MIT",
+  "homepage": "https://orble.tech/docs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test test/sdk.test.mjs",
+    "test:live": "tsc && node --test test/live.test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^20.0.0"
+  }
+}
