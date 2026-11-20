@@ -181,6 +181,11 @@ export class Box {
     this.info = await this.call("POST", "/suspend");
   }
 
+  /** Keep the box from suspending when it's idle (true, waking it if it's suspended), or let it suspend again (false). */
+  async keepAwake(on = true): Promise<void> {
+    this.info = await this.call("PATCH", "", { keep_awake: on });
+  }
+
   async resume(): Promise<void> {
     this.info = await this.call("POST", "/resume");
   }

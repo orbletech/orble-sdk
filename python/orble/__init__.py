@@ -8,7 +8,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __all__ = ["Box", "Error", "Result", "Snapshot", "boxes", "create", "snapshots"]
 
 
@@ -152,6 +152,10 @@ class Box:
 
     def suspend(self):
         self.info = self._call("POST", "/suspend")
+
+    def keep_awake(self, on=True):
+        """Keep the box from suspending when it's idle (waking it if it's suspended), or let it suspend again."""
+        self.info = self._call("PATCH", "", {"keep_awake": on})
 
     def resume(self):
         self.info = self._call("POST", "/resume")
