@@ -1,6 +1,6 @@
 // Orble: Linux boxes for agents, from TypeScript. https://orble.tech/docs
 
-export const version = "0.1.2";
+export const version = "0.1.3";
 
 /** A request Orble refused or couldn't answer: status is the HTTP status (0 when no answer came). */
 export class OrbleError extends Error {
